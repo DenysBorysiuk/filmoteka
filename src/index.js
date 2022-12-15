@@ -11,7 +11,7 @@ function onSearchByKeyword(e) {
   apiService.query = e.target.searchQuery.value;
 
   apiService
-    .getImages()
+    .getFilms()
     .then(resp => {
       if (resp.data.totalHits === 0) {
         apiService.searchQuery = '';

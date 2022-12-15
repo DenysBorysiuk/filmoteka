@@ -9,7 +9,7 @@ export default class ApiService {
     this.page = 1;
   }
 
-  async getImages() {
+  async getFilms() {
     const url = `${BASE_URL}${this.keyWord}?api_key=${API_KEY}`;
     return await axios.get(url);
   }
