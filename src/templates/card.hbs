@@ -1,24 +1,11 @@
 <a class="gallery-link" href="{{largeImageURL}}">
     <div class="thumb">
-        <img class="gallery-image" src="{{ webformatURL }}" alt="{{tags}}" data-source="{{largeImageURL}}"
+        <img class="gallery-image" src="https://image.tmdb.org/t/p/w500{{ backdrop_path }}" alt="{{tags}}"
             loading="lazy" />
     </div>
     <div class="info">
-        <p class="info-item">
-            <b>Likes</b>
-            {{likes}}
-        </p>
-        <p class="info-item">
-            <b>Views</b>
-            {{views}}
-        </p>
-        <p class="info-item">
-            <b>Comments</b>
-            {{comments}}
-        </p>
-        <p class="info-item">
-            <b>Downloads</b>
-            {{downloads}}
-        </p>
+        <p class="info-item">{{original_title}}</p>
+        <p class="info-item">{{genre_ids}}</p>
+        <p class="info-item">{{release_date}}</p>
     </div>
 </a>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = 'b60c32a6f6f2663f6a35c755ff35b4cc';
-const BASE_URL = 'https://api.themoviedb.org/3/search/';
+const BASE_URL = 'https://api.themoviedb.org/3/search/movie/';
 
 export default class ApiService {
   constructor() {
@@ -10,7 +10,7 @@ export default class ApiService {
   }
 
   async getFilms() {
-    const url = `${BASE_URL}${this.keyWord}?api_key=${API_KEY}`;
+    const url = `${BASE_URL}?api_key=${API_KEY}&query=${this.keyWord}&page=${this.page}&append_to_response=details`;
     return await axios.get(url);
   }
 

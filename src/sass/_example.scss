@@ -26,3 +26,17 @@
   background-size: cover;
   background-position: center;
 }
+
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.thumb {
+  height: 250px;
+  width: 400px;
+}

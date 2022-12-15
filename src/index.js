@@ -13,13 +13,14 @@ function onSearchByKeyword(e) {
   apiService
     .getFilms()
     .then(resp => {
-      if (resp.data.totalHits === 0) {
-        apiService.searchQuery = '';
-        return console.log('Sorry, please try again.');
-      }
+      //   if (total_results === 0) {
+      //     apiService.searchQuery = '';
+      //     return console.log('Sorry, please try again.');
+      //   }
+      console.log(resp);
       refs.gallery.insertAdjacentHTML(
         'beforeend',
-        createMarkup(resp.data.hits)
+        createMarkup(resp.data.results)
       );
     })
     .catch(error => console.log(error));
