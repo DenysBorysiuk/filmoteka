@@ -1,31 +1,35 @@
 import ApiService from './js/apiService';
 import refs from './js/refs';
-import cardTpl from './templates/card.hbs';
+import { createMarkup } from './js/create-markup';
+import debounce from 'lodash.debounce';
 
+const DEBOUNCE_DELAY = 300;
 const apiService = new ApiService();
 
-refs.form.addEventListener('submit', onSearchByKeyword);
+refs.input.addEventListener(
+  'input',
+  debounce(onSearchByKeyword, DEBOUNCE_DELAY)
+);
 
 function onSearchByKeyword(e) {
   e.preventDefault();
-  apiService.query = e.target.searchQuery.value;
-
+  apiService.resetPage();
+  console.log(e);
+  apiService.query = refs.input.value.trim();
+  console.log(apiService.getFilmsGeneres().then(resp => console.log(resp)));
   apiService
-    .getFilms()
+    .getFilmsByKeyword()
     .then(resp => {
-      //   if (total_results === 0) {
-      //     apiService.searchQuery = '';
-      //     return console.log('Sorry, please try again.');
-      //   }
+      if (resp.data.total_results === 0) {
+        apiService.searchQuery = '';
+        return console.log('Sorry, please try again.');
+      }
       console.log(resp);
-      refs.gallery.insertAdjacentHTML(
-        'beforeend',
-        createMarkup(resp.data.results)
-      );
+      insertMarkup(resp.data.results);
     })
     .catch(error => console.log(error));
 }
 
-function createMarkup(arr) {
-  return arr.map(cardTpl).join('');
+function insertMarkup(params) {
+  refs.gallery.innerHTML = createMarkup(params);
 }

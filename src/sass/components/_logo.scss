@@ -1,0 +1,17 @@
+.logo {
+  @extend %reset-link;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__text {
+    display: none;
+
+    @include fonts(30px, 35px);
+    color: var(--light-font-cl);
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+  }
+}

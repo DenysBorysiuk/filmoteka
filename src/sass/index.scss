@@ -1,2 +1,32 @@
-@import './common';
-@import './example';
+// utils styles
+@import './utils/variables';
+@import './utils/placeholders';
+// @import './utils/visually-hidden';
+@import './utils/mixins';
+@import './utils/decimals';
+
+// base styles
+@import './base/common';
+@import './base/reset';
+
+// components styles
+@import './components/container';
+@import './components/nav';
+@import './components/logo';
+@import './components/form';
+// @import './components/titles';
+// @import './components/card-set';
+// @import './components/swiper';
+// @import './components/read-more';
+// @import './components/subscription-form';
+// @import './components/modal';
+// @import './components/btn-top';
+
+// layout styles
+@import './layout/header-main';
+// @import './layout/hero';
+// @import './layout/offerings';
+// @import './layout/favorites';
+// @import './layout/customers';
+// @import './layout/subscribe';
+// @import './layout/footer';
