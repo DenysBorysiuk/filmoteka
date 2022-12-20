@@ -14,8 +14,11 @@
 @import './components/nav';
 @import './components/logo';
 @import './components/form';
+@import './components/btn';
+// @import './components/card';
+@import './components/card-set';
+
 // @import './components/titles';
-// @import './components/card-set';
 // @import './components/swiper';
 // @import './components/read-more';
 // @import './components/subscription-form';
@@ -25,7 +28,7 @@
 // layout styles
 @import './layout/header-main';
 @import './layout/header-lib';
-// @import './layout/hero';
+@import './layout/gallery';
 // @import './layout/offerings';
 // @import './layout/favorites';
 // @import './layout/customers';

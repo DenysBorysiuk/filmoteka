@@ -43,4 +43,14 @@
   @media screen and (min-width: $tablet) {
     width: 394px;
   }
+
+  transition: border-color var(--animation-slow),
+    box-shadow var(--animation-slow), transform var(--animation-slow);
+
+  &:hover,
+  &:focus {
+    border-color: var(--accent-cl);
+    box-shadow: inset 3px -11px 25px -13px #a7151a;
+    transform: scale(1.1);
+  }
 }

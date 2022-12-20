@@ -14,9 +14,8 @@ refs.input.addEventListener(
 function onSearchByKeyword(e) {
   e.preventDefault();
   apiService.resetPage();
-  console.log(e);
   apiService.query = refs.input.value.trim();
-  console.log(apiService.getFilmsGeneres().then(resp => console.log(resp)));
+
   apiService
     .getFilmsByKeyword()
     .then(resp => {
@@ -24,7 +23,6 @@ function onSearchByKeyword(e) {
         apiService.searchQuery = '';
         return console.log('Sorry, please try again.');
       }
-      console.log(resp);
       insertMarkup(resp.data.results);
     })
     .catch(error => console.log(error));

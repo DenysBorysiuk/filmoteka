@@ -1,0 +1,15 @@
+.gallery {
+  @include section;
+  &__list {
+    @extend %reset-list;
+    --items: 1;
+
+    @media screen and (min-width: $tablet) {
+      --items: 2;
+    }
+
+    @media screen and (min-width: $desktop) {
+      --items: 3;
+    }
+  }
+}

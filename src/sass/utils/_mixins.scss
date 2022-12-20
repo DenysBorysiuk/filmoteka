@@ -6,3 +6,13 @@
   line-height: decimal-round($lh / $fs);
   // letter-spacing: $ls;
 }
+
+@mixin section($padding: 20px) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

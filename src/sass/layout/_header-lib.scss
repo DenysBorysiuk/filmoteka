@@ -2,23 +2,85 @@
   padding-top: 40px;
   padding-bottom: 92px;
 
-  // background-color: black;
-  background-color: var(--header-bg-cl);
+  // background-color: var(--header-bg-cl);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
-  background-image: url('../images/header-lib/lib-bg_lg@1x.jpg');
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.56),
+      rgba(0, 0, 0, 0.56)
+    ),
+    url('../images/header-lib/lib-bg_sm@1x.jpg');
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-lib/lib-bg_sm@2x.jpg');
+  }
 
   @media screen and (min-width: $tablet) {
     padding-bottom: 80px;
-    background-image: url('../images/header-lib/lib-bg_lg@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-lib/lib-bg_md@1x.jpg');
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('../images/header-lib/lib-bg_md@2x.jpg');
+    }
   }
 
   @media screen and (min-width: $desktop) {
+    height: 216px;
     padding-bottom: 80px;
-    background-image: url('../images/header-lib/lib-bg_lg@1x.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-lib/lib-bg_lg@1x.jpg');
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('../images/header-lib/lib-bg_lg@2x.jpg');
+    }
+  }
+}
+
+.header__btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+    margin-top: 40px;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 16px;
+  }
+}
+
+.header__btn {
+  padding: 13px 35px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 12px 45px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 12px 42px;
   }
 }

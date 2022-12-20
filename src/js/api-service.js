@@ -9,6 +9,11 @@ export default class ApiService {
     this.page = 1;
   }
 
+  async getFilmsByReiting() {
+    const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`;
+    return await axios.get(url);
+  }
+
   async getFilmsByKeyword() {
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${this.keyWord}&page=${this.page}`;
     return await axios.get(url);
