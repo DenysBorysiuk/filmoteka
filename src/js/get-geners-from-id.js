@@ -1,7 +1,7 @@
 import genresList from './geners-list';
 
 export function getGeneresName(genresIds) {
-  newArr = [];
+  let newArr = [];
   genresIds.map(genreId => {
     newArr.push(genresList.find(genre => genre.id === genreId));
   });
