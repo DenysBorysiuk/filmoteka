@@ -3,10 +3,12 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--indent);
+  row-gap: calc(var(--indent) * 2);
 
   &__item {
     display: flex;
     justify-content: center;
+    // width: 395px;
     flex-basis: calc(
       (100% - var(--indent) * (var(--items) - 1)) / var(--items)
     );

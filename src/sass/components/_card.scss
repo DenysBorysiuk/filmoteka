@@ -1,2 +1,58 @@
-// .card {
-// }
+.card {
+  @extend %reset-link;
+  transition: transform var(--animation);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+
+  &__thumb {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 280px;
+    height: 402px;
+
+    @media screen and (min-width: $tablet) {
+      width: 336px;
+      height: 455px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 395px;
+      height: 574px;
+    }
+  }
+
+  &__info {
+    padding-top: 12px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+
+  &__title {
+    @include fonts(12px, 16px);
+    text-transform: uppercase;
+
+    @media screen and (min-width: $desktop) {
+      @include fonts(20px, 24px);
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__item {
+    @include fonts(12px, 16px);
+    color: var(--accent-cl);
+
+    @media screen and (min-width: $desktop) {
+      @include fonts(20px, 24px);
+    }
+  }
+}

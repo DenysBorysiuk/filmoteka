@@ -1,13 +1,17 @@
 <li class="card-set__item">
-<a class="gallery__link" href="{{largeImageURL}}">
-    <div class="thumb">
-        <img class="gallery-image" src="https://image.tmdb.org/t/p/w500{{ poster_path }}" alt="{{tags}}"
+<a class="card" href="{{largeImageURL}}">
+    <div class="card__thumb">
+        <img class="card__image" src="https://image.tmdb.org/t/p/w500{{ poster_path }}" alt="{{tags}}"
             loading="lazy" />
     </div>
-    <div class="info">
-        <p class="info-item">{{original_title}}</p>
-        <p class="info-item">{{genre_ids}}</p>
-        <p class="info-item">{{release_date}}</p>
+    <div class="card__info">
+        <h2 class="card__title">{{original_title}}</h2>
+        <div class="card__wrap">
+                    <p class="card__item">Genere |</p>
+                    <p class="card__item">{{release_date}}</p>
+        </div>
     </div>
 </a>
 </li>
+
+{{!-- <p class="card__item">{{genre_ids}}</p> --}}

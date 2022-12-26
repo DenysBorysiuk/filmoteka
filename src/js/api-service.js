@@ -10,7 +10,7 @@ export default class ApiService {
   }
 
   async getFilmsByReiting() {
-    const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`;
+    const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&page=${this.page}`;
     return await axios.get(url);
   }
 
@@ -19,18 +19,30 @@ export default class ApiService {
     return await axios.get(url);
   }
 
-  async getFilmsGeneres() {
+  async getFilmsByGeneres() {
     const url = `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`;
     return await axios.get(url);
   }
 
-  incrementPage() {
-    this.page += 1;
-  }
+  // incrementPage() {
+  //   this.page += 1;
+  // }
 
-  resetPage() {
-    this.page = 1;
-  }
+  // decrementPage() {
+  //   this.page -= 1;
+  // }
+
+  // incrementPageOnThree() {
+  //   this.page += 3;
+  // }
+
+  // decrementPageOnThree() {
+  //   this.page -= 3;
+  // }
+
+  // resetPage() {
+  //   this.page = 1;
+  // }
 
   get query() {
     return this.keyWord;
