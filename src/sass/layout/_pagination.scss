@@ -6,7 +6,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // gap: 16px;
   }
 
   &__item {
@@ -36,16 +35,24 @@
 }
 
 .last-page {
-  // margin-right: 16px;
-  // margin-left: 16px;
+  margin-right: 10px;
   @media screen and (max-width: 767px) {
     display: none;
   }
 }
 
-.next-btn,
+.next-btn {
+  background-color: var(--secondary-bg-cl);
+  background-image: url('../images/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .prev-btn {
   background-color: var(--secondary-bg-cl);
+  background-image: url('../images/arrow-left.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .prev-dots,

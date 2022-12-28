@@ -1,5 +1,10 @@
 .gallery {
   @include section;
+  padding-bottom: 0;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 0;
+  }
+
   &__list {
     @extend %reset-list;
     --items: 1;

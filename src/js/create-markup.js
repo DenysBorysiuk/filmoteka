@@ -2,15 +2,14 @@ import { getGeneresName } from './get-geners-from-id';
 import parkingPage from '../images/parking-page.jpg';
 
 export function createMarkup(arr) {
-  let genresName;
   return arr
-    .map(({ genre_ids, poster_path, original_title, release_date }) => {
+    .map(({ id, genre_ids, poster_path, original_title, release_date }) => {
       const poster = poster_path
         ? `https://image.tmdb.org/t/p/w500${poster_path}`
         : parkingPage;
       return `
     <li class="card-set__item">
-     <a class="card" href="">
+     <a class="card" href="" id="${id}">
       <div class="card__thumb">
        <img class="card__image" src="${poster}" alt="${original_title}" loading="lazy" />
       </div>

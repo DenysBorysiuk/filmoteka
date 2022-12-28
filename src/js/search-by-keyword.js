@@ -1,7 +1,7 @@
 import ApiService from './api-service';
 import Pagination from './pagination';
 import refs from './refs';
-import { insertMarkup } from './rendering-markup';
+import { createMarkup } from './create-markup';
 import debounce from 'lodash.debounce';
 import { onChahgePage } from './change-page';
 import { scrollOnTop } from './scroll-on-top';
@@ -33,11 +33,18 @@ function onSearchByKeyword(page) {
   apiService
     .getFilmsByKeyword()
     .then(resp => {
-      if (resp.data.total_results === 0) {
+      if (!resp.data.total_results) {
         apiService.searchQuery = '';
-        return console.log('Sorry, please try again.');
+        refs.gallery.innerHTML = '';
+        setTimeout(() => {
+          refs.inputNotice.classList.add('form__notice--hidden');
+        }, 3000);
+        refs.inputNotice.classList.remove('form__notice--hidden');
+        refs.inputNotice.textContent =
+          'Search result not successful. Enter the correct movie name';
+        return;
       }
-      insertMarkup(resp.data.results);
+      refs.gallery.innerHTML = createMarkup(resp.data.results);
       pagination.totalPages = resp.data.total_pages;
       pagination.renderMarkup();
       scrollOnTop();
@@ -53,7 +60,7 @@ function searchTranding(page) {
   apiService
     .getFilmsByReiting()
     .then(resp => {
-      insertMarkup(resp.data.results);
+      refs.gallery.innerHTML = createMarkup(resp.data.results);
       pagination.totalPages = resp.data.total_pages;
       pagination.renderMarkup();
       scrollOnTop();

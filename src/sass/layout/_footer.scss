@@ -10,8 +10,27 @@
       justify-content: center;
     }
   }
+
   &__wrap {
     display: flex;
     justify-content: center;
+    gap: 10px;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__text {
+    @include fonts(14px, 16px, 400);
+    color: var(--secondary_font-cl);
+
+    @media screen and (min-width: $tablet) {
+      @include fonts(16px, 19px, 400);
+    }
+  }
+
+  &__icon {
+    fill: var(--accent-cl);
   }
 }

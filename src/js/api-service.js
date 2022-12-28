@@ -7,6 +7,7 @@ export default class ApiService {
   constructor() {
     this.keyWord = '';
     this.page = 1;
+    this.id = '';
   }
 
   async getFilmsByReiting() {
@@ -23,6 +24,27 @@ export default class ApiService {
     const url = `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`;
     return await axios.get(url);
   }
+
+  async getFilmsDetails() {
+    const url = `${BASE_URL}/movie/${this.id}?api_key=${API_KEY}&language=en-US`;
+    return await axios.get(url);
+  }
+
+  get query() {
+    return this.keyWord;
+  }
+
+  set query(newQuery) {
+    this.keyWord = newQuery;
+  }
+
+  // get id() {
+  //   return this.id;
+  // }
+
+  // set id(newId) {
+  //   this.id = newId;
+  // }
 
   // incrementPage() {
   //   this.page += 1;
@@ -43,12 +65,4 @@ export default class ApiService {
   // resetPage() {
   //   this.page = 1;
   // }
-
-  get query() {
-    return this.keyWord;
-  }
-
-  set query(newQuery) {
-    this.keyWord = newQuery;
-  }
 }

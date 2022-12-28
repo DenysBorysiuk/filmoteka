@@ -1,0 +1,184 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: scroll;
+
+  background-color: var(--backdrop-bg-cl);
+
+  transition: opacity var(--animation), visibility var(--animation);
+
+  &--is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: relative;
+  padding-top: 48px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+
+  background-color: var(--light-font-cl);
+
+  // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  //   0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transition: transform var(--animation);
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    margin: 0 auto;
+    max-width: 280px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 704px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 806px;
+  }
+
+  .backdrop--is-hidden & {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  &__wrap {
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      gap: 68px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      gap: 16px;
+    }
+  }
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  stroke: var(--main-font-cl);
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  transition: color var(--animation);
+
+  &:hover,
+  &:focus {
+    stroke: var(--accent-cl);
+  }
+}
+
+.modal__thumb {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 240px;
+  height: 357px;
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 264px;
+    height: 374px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 375px;
+    height: 478px;
+  }
+}
+
+.modal__content-wrap {
+  @media screen and (min-width: $tablet) {
+    width: 264px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 391px;
+  }
+}
+
+.modal__title {
+  @include fonts(20px, 23px);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $desktop) {
+    @include fonts(30px, 35px);
+  }
+}
+
+.modal__film-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.modal__list {
+  @extend %reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal__item-title {
+  @include fonts(12px, 16px);
+  color: var(--modal-font-cl);
+}
+
+.modal__item-value {
+  @include fonts(12px, 16px);
+  text-transform: uppercase;
+  // color: var(--modal-font-cl);
+}
+
+.modal__subtitle {
+  @include fonts(12px, 16px);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.modal__text {
+  @include fonts(12px, 20px);
+  margin-bottom: 20px;
+}
+
+.modal__btn-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__watched-btn {
+  padding: 6px 27px;
+  border: 1px solid #000000;
+  width: 110px;
+
+  // @media screen and (max-width: calc($tablet - 1px)) {
+  //   width: 110px;
+  // }
+}
+
+.modal__queue-btn {
+  padding: 13px;
+  border: 1px solid #000000;
+}
