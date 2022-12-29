@@ -19,6 +19,7 @@ function onModalOpen(e) {
 function onModalClose() {
   refs.modal.classList.add('backdrop--is-hidden');
   // refs.body.classList.toggle('no-scroll');
+  refs.modalContent.innerHTML = '';
 }
 
 function getFilmsDetails() {
