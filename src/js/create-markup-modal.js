@@ -9,7 +9,12 @@ export function createMarkupModal({
   popularity,
   overview,
 }) {
-  console.log(genres);
+  // if (!data) {
+  //   refs.modalRef.innerHTML =
+  //     '<div class="modal__empty">Sorry, info is unavailable</div>';
+  //   status = false;
+  //   return;
+  // }
   return ` 
       <div class="modal__thumb">
         <img src="${
@@ -37,8 +42,8 @@ export function createMarkupModal({
     <h3 class="modal__subtitle">about</h3>
     <p class="modal__text">${overview}</p>
     <div class="modal__btn-wrap">
-      <button class="btn modal__watched-btn">add to watched</button>
-      <button class="btn modal__queue-btn">add to queue</button>
+      <button class="btn modal__watched-btn" type="button">add to watched</button>
+      <button class="btn modal__queue-btn" type="button">add to queue</button>
     </div>
   </div>`;
 }

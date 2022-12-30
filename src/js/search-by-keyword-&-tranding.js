@@ -1,7 +1,7 @@
 import ApiService from './api-service';
 import Pagination from './pagination';
 import refs from './refs';
-import { createMarkup } from './create-markup';
+import { createMarkup } from './create-markup-gallery';
 import debounce from 'lodash.debounce';
 import { onChahgePage } from './change-page';
 import { scrollOnTop } from './scroll-on-top';

@@ -7,8 +7,11 @@ const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   modalContent: document.querySelector('.modal__wrap'),
-
   body: document.querySelector('[data-page]'),
+  backdrop: document.querySelector('.backdrop'),
+  galleryLib: document.querySelector('.library'),
+  watchedLibBtn: document.querySelector('[data-btn-watched]'),
+  queueLibBtn: document.querySelector('[data-btn-queue]'),
 };
 
 export default refs;

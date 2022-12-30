@@ -171,12 +171,15 @@
   @media screen and (min-width: $desktop) {
     gap: 15px;
   }
+
+  &--current {
+    background-color: var(--accent-cl);
+  }
 }
 
 .modal__watched-btn {
   padding: 5px 26px;
   border: 1px solid #000000;
-  // width: 110px;
 
   @media screen and (max-width: calc($tablet - 1px)) {
     width: 110px;
@@ -187,6 +190,11 @@
     padding-right: 11px;
     padding-left: 11px;
     padding-bottom: 12px;
+  }
+
+  &--current {
+    background-color: var(--accent-cl);
+    border: none;
   }
 }
 

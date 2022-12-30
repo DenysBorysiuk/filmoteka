@@ -45,24 +45,4 @@ export default class ApiService {
   // set id(newId) {
   //   this.id = newId;
   // }
-
-  // incrementPage() {
-  //   this.page += 1;
-  // }
-
-  // decrementPage() {
-  //   this.page -= 1;
-  // }
-
-  // incrementPageOnThree() {
-  //   this.page += 3;
-  // }
-
-  // decrementPageOnThree() {
-  //   this.page -= 3;
-  // }
-
-  // resetPage() {
-  //   this.page = 1;
-  // }
 }
