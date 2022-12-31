@@ -1,6 +1,7 @@
 import refs from './refs';
 import ApiService from './api-service';
 import { createMarkupModal } from './create-markup-modal';
+import { onLoader, offLoader } from './loader';
 import {
   watchedArr,
   queueArr,
@@ -50,10 +51,12 @@ function onEscKeyPress(e) {
 }
 
 function getFilmsDetails() {
+  onLoader();
   apiService
     .getFilmsDetails()
     .then(resp => {
       refs.modalContent.innerHTML = createMarkupModal(resp.data);
+      offLoader();
     })
     .catch(error => console.log(error));
 }

@@ -2,6 +2,7 @@ import refs from './refs';
 import ApiService from './api-service';
 import { createMarkupLibrary } from './create-markup-library';
 import { watchedArr, queueArr } from './storage-service';
+import { onLoader, offLoader } from './loader';
 
 const apiService = new ApiService();
 
@@ -19,13 +20,17 @@ function onClickQueue(e) {
 }
 
 function renderingWatchedFilms(idsArr) {
+  onLoader();
   getFilmsArr(idsArr).then(film => {
+    offLoader();
     refs.galleryLib.innerHTML = createMarkupLibrary(film);
   });
 }
 
 function renderingQueueFilms(idsArr) {
+  onLoader();
   getFilmsArr(idsArr).then(film => {
+    offLoader();
     refs.galleryLib.innerHTML = createMarkupLibrary(film);
   });
 }
