@@ -5,6 +5,7 @@ import { createMarkup } from './create-markup-gallery';
 import debounce from 'lodash.debounce';
 import { onChahgePage } from './change-page';
 import { scrollOnTop } from './scroll-on-top';
+import { onLoader, offLoader } from './loader';
 
 const DEBOUNCE_DELAY = 300;
 const apiService = new ApiService();
@@ -29,10 +30,12 @@ function onSearchByKeyword(page) {
   refs.pagination.removeEventListener('click', onTrandingPgn);
   pagination.page = page;
   apiService.page = page;
+  onLoader();
 
   apiService
     .getFilmsByKeyword()
     .then(resp => {
+      offLoader();
       if (!resp.data.total_results) {
         apiService.searchQuery = '';
         refs.gallery.innerHTML = '';
@@ -57,6 +60,7 @@ function searchTranding(page) {
   refs.pagination.removeEventListener('click', onKeywordPgn);
   pagination.page = page;
   apiService.page = page;
+  onLoader();
   apiService
     .getFilmsByReiting()
     .then(resp => {
@@ -65,6 +69,7 @@ function searchTranding(page) {
       pagination.renderMarkup();
       scrollOnTop();
       refs.pagination.addEventListener('click', onTrandingPgn);
+      offLoader();
     })
     .catch(error => console.log(error));
 }
