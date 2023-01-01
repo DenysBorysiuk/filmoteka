@@ -12,6 +12,7 @@
   background-color: var(--backdrop-bg-cl);
 
   transition: opacity var(--animation-slow), visibility var(--animation-slow);
+  // transition: opacity 600ms ease-out, visibility 600ms ease-out;
 
   &--is-hidden {
     opacity: 0;
@@ -29,7 +30,7 @@
 
   background-color: var(--light-font-cl);
 
-  transition: transform var(--animation-slow);
+  transition: transform var(--animation);
 
   @media screen and (max-width: calc($tablet - 1px)) {
     margin: 0 auto;
@@ -39,7 +40,7 @@
   @media screen and (min-width: $tablet) {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     width: 704px;
   }
 
@@ -48,7 +49,7 @@
   }
 
   .backdrop--is-hidden & {
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.1);
   }
 
   &__wrap {

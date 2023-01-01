@@ -30,12 +30,12 @@ function onModalOpen(e) {
 }
 
 function onModalClose() {
-  refs.modalContent.innerHTML = '';
   refs.modal.classList.add('backdrop--is-hidden');
   refs.body.classList.remove('no-scroll');
   refs.modalContent.removeEventListener('click', onClickBtn);
   refs.backdrop.removeEventListener('click', onClickBackdrop);
   window.removeEventListener('keydown', onEscKeyPress);
+  // refs.modalContent.innerHTML = '';
 }
 
 function onClickBackdrop(e) {
