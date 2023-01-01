@@ -24,6 +24,8 @@ function renderingWatchedFilms(idsArr) {
   getFilmsArr(idsArr).then(film => {
     offLoader();
     refs.galleryLib.innerHTML = createMarkupLibrary(film);
+    refs.watchedLibBtn.classList.add('btn--current');
+    refs.queueLibBtn.classList.remove('btn--current');
   });
 }
 
@@ -32,6 +34,8 @@ function renderingQueueFilms(idsArr) {
   getFilmsArr(idsArr).then(film => {
     offLoader();
     refs.galleryLib.innerHTML = createMarkupLibrary(film);
+    refs.queueLibBtn.classList.add('btn--current');
+    refs.watchedLibBtn.classList.remove('btn--current');
   });
 }
 

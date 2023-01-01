@@ -16,6 +16,7 @@ refs.closeModalBtn.addEventListener('click', onModalClose);
 
 function onModalOpen(e) {
   e.preventDefault();
+  refs.modalContent.innerHTML = '';
   if (e.target.nodeName === 'UL' || e.target.classList.contains('container')) {
     return;
   }
@@ -68,22 +69,33 @@ function onClickBtn(e) {
 
   if (e.target.classList.contains('modal__watched-btn')) {
     if (watchedArr.includes(apiService.id)) {
-      // watchedArr.splice(watchedArr.indexOf(apiService.id), 1);
-      // e.target.classList.remove('modal__watched-btn--current');
-      return console.log('єто инклуд');
+      const current = watchedArr.indexOf(apiService.id);
+      watchedArr.splice(current, 1);
+      addToWatched(watchedArr);
+      e.target.classList.remove('btn--current');
+      e.target.textContent = 'add to watched';
+      return;
     }
     watchedArr.push(apiService.id);
     addToWatched(watchedArr);
-    e.target.classList.add('modal__watched-btn--current');
+    e.target.textContent = 'in watched';
+    e.target.classList.add('btn--current');
     return;
   }
 
   if (e.target.classList.contains('modal__queue-btn')) {
     if (queueArr.includes(apiService.id)) {
-      return console.log('єто инклуд');
+      const current = queueArr.indexOf(apiService.id);
+      queueArr.splice(current, 1);
+      addToQueue(queueArr);
+      e.target.textContent = 'add to queue';
+      e.target.classList.remove('btn--current');
+      return;
     }
     queueArr.push(apiService.id);
     addToQueue(queueArr);
+    e.target.textContent = 'in queue';
+    e.target.classList.add('btn--current');
     return;
   }
 }

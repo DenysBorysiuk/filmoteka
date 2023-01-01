@@ -11,7 +11,7 @@ export default class ApiService {
   }
 
   async getFilmsByReiting() {
-    const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&page=${this.page}`;
+    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
     return await axios.get(url);
   }
 
