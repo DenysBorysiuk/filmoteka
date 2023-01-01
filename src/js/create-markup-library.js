@@ -1,7 +1,8 @@
 import parkingPage from '../images/parking-page.jpg';
+import { getGeneresName } from './get-geners-from-id';
 
 export function createMarkupLibrary(arr) {
-  console.log(arr);
+  // console.log(arr);
   return arr
     .map(
       ({
@@ -15,6 +16,7 @@ export function createMarkupLibrary(arr) {
         const poster = poster_path
           ? `https://image.tmdb.org/t/p/w500${poster_path}`
           : parkingPage;
+        const genreIds = genres.map(genre => genre.id);
         return `
     <li class="card-set__item">
      <a class="card" href="" id="${id}">
@@ -24,9 +26,9 @@ export function createMarkupLibrary(arr) {
       <div class="card__info">
        <h2 class="card__title">${original_title}</h2>
        <div class="card__wrap">
-        <p class="card__item">${genres[0].name} |</p>
+        <p class="card__item">${getGeneresName(genreIds)} |</p>
         <p class="card__item">${release_date.slice(0, 4)}</p>
-        <p class="card__item">${vote_average}</p>
+        <p class="card__vote">${vote_average.toFixed(1)}</p>
        </div>
       </div>
      </a>

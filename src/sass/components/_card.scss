@@ -51,7 +51,12 @@
 
   &__wrap {
     display: flex;
+    align-items: baseline;
     gap: 10px;
+
+    @media screen and (min-width: $desktop) {
+      align-items: center;
+    }
   }
 
   &__item {
@@ -60,6 +65,18 @@
 
     @media screen and (min-width: $desktop) {
       @include fonts(20px, 24px);
+    }
+  }
+
+  &__vote {
+    @include fonts(12px, 14px);
+    color: var(--light-font-cl);
+    background-color: var(--accent-cl);
+    padding: 1px 6px;
+    border-radius: 5px;
+
+    @media screen and (min-width: $desktop) {
+      padding: 3px 11px;
     }
   }
 }

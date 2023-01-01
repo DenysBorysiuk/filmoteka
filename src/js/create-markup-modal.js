@@ -1,5 +1,6 @@
 import parkingPage from '../images/parking-page.jpg';
 import { watchedArr, queueArr } from './storage-service';
+import { getGeneresName } from './get-geners-from-id';
 
 export function createMarkupModal({
   original_title,
@@ -17,6 +18,7 @@ export function createMarkupModal({
   //   status = false;
   //   return;
   // }
+  const genreIds = genres.map(genre => genre.id);
   const poster = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : parkingPage;
@@ -39,14 +41,16 @@ export function createMarkupModal({
         <ul class="modal__list">
           <li class="modal__item-title">Vote&nbsp;/&nbsp;Votes</li>
           <li class="modal__item-title">Popularity</li>
-          <li class="modal__item-title">Original&nbsp;Title</li>
+          <li class="modal__item-title">Original Title</li>
           <li class="modal__item-title">Genre</li>
         </ul>
         <ul class="modal__list">
-          <li class="modal__item-value">${vote_average} / ${vote_count}</li>
-          <li class="modal__item-value">${popularity}</li>
+          <li class="modal__item-value"><span class="modal__item-vote">${vote_average.toFixed(
+            1
+          )}</span> / ${vote_count}</li>
+          <li class="modal__item-value">${popularity.toFixed(1)}</li>
           <li class="modal__item-value">${original_title}</li>
-          <li class="modal__item-value">${genres[0].name}</li>
+          <li class="modal__item-value">${getGeneresName(genreIds)}</li>
         </ul>
     </div>
     <h3 class="modal__subtitle">about</h3>

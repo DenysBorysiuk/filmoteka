@@ -27,8 +27,8 @@
   }
 
   &--current {
-    border-color: transparent;
-    // border: none;
+    // border-color: transparent;
+    border: none;
     background-color: var(--accent-cl);
   }
 }
