@@ -1,6 +1,7 @@
 import parkingPage from '../images/parking-page.jpg';
 import { watchedArr, queueArr } from './storage-service';
 import { getGeneresName } from './get-geners-from-id';
+import { getTrailer } from './get-trailer';
 
 export function createMarkupModal({
   original_title,
@@ -12,6 +13,8 @@ export function createMarkupModal({
   overview,
   id,
 }) {
+  console.log(getTrailer(id));
+  getTrailer(id);
   // if (!data) {
   //   refs.modalRef.innerHTML =
   //     '<div class="modal__empty">Sorry, info is unavailable</div>';
@@ -59,5 +62,6 @@ export function createMarkupModal({
       <button class="btn modal__watched-btn ${watchedCl}" type="button">${watchedText}</button>
       <button class="btn modal__queue-btn ${queueCl}" type="button">${queueText}</button>
     </div>
+    <button class="btn modal__trailer-btn" type="button">Trailer</button>
   </div>`;
 }

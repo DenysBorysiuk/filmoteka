@@ -45,6 +45,13 @@ function onClickBackdrop(e) {
   }
 }
 
+function onClickTrailerBackdrop(e) {
+  if (e.target.classList.contains('trailer-backdrop')) {
+    refs.trailerBackdrop.classList.add('trailer-backdrop--is-hidden');
+    refs.trailerWrap.innerHTML = '';
+  }
+}
+
 function onEscKeyPress(e) {
   if (e.code === 'Escape') {
     onModalClose();
@@ -97,5 +104,11 @@ function onClickBtn(e) {
     e.target.textContent = 'in queue';
     e.target.classList.add('btn--current');
     return;
+  }
+
+  if (e.target.classList.contains('modal__trailer-btn')) {
+    console.log('єто трейлер');
+    refs.trailerBackdrop.classList.remove('trailer-backdrop--is-hidden');
+    refs.trailerBackdrop.addEventListener('click', onClickTrailerBackdrop);
   }
 }

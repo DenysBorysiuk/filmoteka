@@ -13,6 +13,8 @@ const refs = {
   watchedLibBtn: document.querySelector('[data-btn-watched]'),
   queueLibBtn: document.querySelector('[data-btn-queue]'),
   loader: document.querySelector('.loader-backdrop'),
+  trailerBackdrop: document.querySelector('.trailer-backdrop'),
+  trailerWrap: document.querySelector('.trailer-wrap'),
 };
 
 export default refs;

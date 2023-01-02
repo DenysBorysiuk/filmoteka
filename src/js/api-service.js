@@ -30,6 +30,11 @@ export default class ApiService {
     return await axios.get(url);
   }
 
+  async getFilmsTrailer() {
+    const url = `${BASE_URL}/movie/${this.id}/videos?api_key=${API_KEY}&language=en-US`;
+    return await axios.get(url);
+  }
+
   get query() {
     return this.keyWord;
   }

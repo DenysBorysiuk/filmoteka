@@ -1,0 +1,43 @@
+.trailer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: scroll;
+
+  background-color: var(--backdrop-bg-cl);
+
+  transition: opacity var(--animation-slow), visibility var(--animation-slow);
+
+  &--is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.trailer-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trailer {
+  height: 180px;
+  width: 320px;
+
+  @media screen and (min-width: $tablet) {
+    height: 360px;
+    width: 640px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 360px;
+    width: 640px;
+  }
+}
