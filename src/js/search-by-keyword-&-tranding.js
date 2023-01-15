@@ -39,6 +39,7 @@ function onSearchByKeyword(page) {
       if (!resp.data.total_results) {
         apiService.searchQuery = '';
         refs.gallery.innerHTML = '';
+        pagination.removeMarkup();
         setTimeout(() => {
           refs.inputNotice.classList.add('form__notice--hidden');
         }, 3000);
