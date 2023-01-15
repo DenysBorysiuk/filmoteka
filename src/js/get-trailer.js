@@ -1,13 +1,17 @@
 import ApiService from './api-service';
 import refs from './refs';
+import { onLoader, offLoader } from './loader';
 
 const apiService = new ApiService();
 
 export function getTrailer(id) {
+  onLoader();
+  refs.trailerBackdrop.classList.remove('trailer-backdrop--is-hidden');
   apiService.id = id;
   apiService
     .getFilmsTrailer()
     .then(resp => {
+      offLoader();
       if (!resp.data.results) {
         return console.log('No video');
       }
@@ -20,6 +24,7 @@ export function getTrailer(id) {
 
 function renderingTrailer(obj) {
   return `    <iframe
+      id="Youtube"
       class="trailer"
       src="https://www.youtube.com/embed/${obj.key}"
       frameborder="0"

@@ -1,7 +1,6 @@
 import parkingPage from '../images/parking-page.jpg';
 import { watchedArr, queueArr } from './storage-service';
 import { getGeneresName } from './get-geners-from-id';
-import { getTrailer } from './get-trailer';
 
 export function createMarkupModal({
   original_title,
@@ -13,14 +12,6 @@ export function createMarkupModal({
   overview,
   id,
 }) {
-  console.log(getTrailer(id));
-  getTrailer(id);
-  // if (!data) {
-  //   refs.modalRef.innerHTML =
-  //     '<div class="modal__empty">Sorry, info is unavailable</div>';
-  //   status = false;
-  //   return;
-  // }
   const genreIds = genres.map(genre => genre.id);
   const poster = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`

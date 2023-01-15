@@ -2,6 +2,7 @@ import refs from './refs';
 import ApiService from './api-service';
 import { createMarkupModal } from './create-markup-modal';
 import { onLoader, offLoader } from './loader';
+import { getTrailer } from './get-trailer';
 import {
   watchedArr,
   queueArr,
@@ -54,7 +55,14 @@ function onClickTrailerBackdrop(e) {
 
 function onEscKeyPress(e) {
   if (e.code === 'Escape') {
-    onModalClose();
+    if (
+      !refs.trailerBackdrop.classList.contains('trailer-backdrop--is-hidden')
+    ) {
+      refs.trailerBackdrop.classList.add('trailer-backdrop--is-hidden');
+      refs.trailerWrap.innerHTML = '';
+    } else {
+      onModalClose();
+    }
   }
 }
 
@@ -107,8 +115,7 @@ function onClickBtn(e) {
   }
 
   if (e.target.classList.contains('modal__trailer-btn')) {
-    console.log('єто трейлер');
-    refs.trailerBackdrop.classList.remove('trailer-backdrop--is-hidden');
+    getTrailer(apiService.id);
     refs.trailerBackdrop.addEventListener('click', onClickTrailerBackdrop);
   }
 }
