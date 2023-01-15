@@ -4,7 +4,6 @@
   font-weight: $fw;
   font-size: $fs;
   line-height: decimal-round($lh / $fs);
-  // letter-spacing: $ls;
 }
 
 @mixin section($padding: 20px) {
