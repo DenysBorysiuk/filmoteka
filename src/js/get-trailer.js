@@ -13,7 +13,7 @@ export function getTrailer(id) {
     .then(resp => {
       offLoader();
       if (!resp.data.results) {
-        return console.log('No video');
+        return alert('No video');
       }
       refs.trailerWrap.innerHTML = renderingTrailer(
         resp.data.results.find(el => el.type === 'Trailer')

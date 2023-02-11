@@ -24,11 +24,6 @@ function onModalOpen(e) {
 
   apiService.id = e.target.closest('.card').id;
   getFilmsDetails();
-  refs.modal.classList.remove('backdrop--is-hidden');
-  refs.body.classList.add('no-scroll');
-  refs.modalContent.addEventListener('click', onClickBtn);
-  refs.backdrop.addEventListener('click', onClickBackdrop);
-  window.addEventListener('keydown', onEscKeyPress);
 }
 
 function onModalClose() {
@@ -72,6 +67,11 @@ function getFilmsDetails() {
     .getFilmsDetails()
     .then(resp => {
       refs.modalContent.innerHTML = createMarkupModal(resp.data);
+      refs.modal.classList.remove('backdrop--is-hidden');
+      refs.body.classList.add('no-scroll');
+      refs.modalContent.addEventListener('click', onClickBtn);
+      refs.backdrop.addEventListener('click', onClickBackdrop);
+      window.addEventListener('keydown', onEscKeyPress);
       offLoader();
     })
     .catch(error => console.log(error));

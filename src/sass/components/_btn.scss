@@ -1,5 +1,7 @@
 .btn {
   @include fonts(12px, 16px);
+  width: 110px;
+  padding: 13px 0;
   text-transform: uppercase;
   background-color: transparent;
 
@@ -8,24 +10,24 @@
   cursor: pointer;
 
   transition: background-color var(--animation-slow),
-    border var(--animation-slow);
+    border-color var(--animation-slow), color var(--animation-slow);
 
-  &--white-cl {
-    color: var(--light-font-cl);
-    border-color: var(--light-font-cl);
+  @media screen and (min-width: $tablet) {
+    width: 125px;
   }
 
-  &--black-cl {
-    color: var(--light-font-cl);
-    border-color: var(--light-font-cl);
+  @media screen and (min-width: $desktop) {
+    width: 136px;
   }
 
   &:hover {
+    color: var(--light-font-cl);
     border-color: var(--accent-cl);
     background-color: var(--accent-cl);
   }
 
   &--current {
+    color: var(--light-font-cl);
     border-color: var(--accent-cl);
     background-color: var(--accent-cl);
   }

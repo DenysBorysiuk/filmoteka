@@ -72,13 +72,10 @@
 }
 
 .header__btn {
-  padding: 13px 35px;
+  width: 130px;
+  color: var(--light-font-cl);
 
   @media screen and (min-width: $tablet) {
-    padding: 12px 45px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    padding: 12px 42px;
+    width: 148px;
   }
 }
