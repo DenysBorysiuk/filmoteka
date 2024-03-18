@@ -2,7 +2,7 @@
 
 ---
 
-![Site image](./images/og-image.png)
+![Site image](./src/images/og-image.png)
 
 ## 🗂️ Project description 
 
