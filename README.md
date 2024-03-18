@@ -1,18 +1,30 @@
-# Filmoteka 🎥 
+#  🎥 Filmoteka 
+
+---
+
+![Site image](./images/og-image.png)
 
 ## 🗂️ Project description 
 
-This project was created with Parcel.
+### Description
 
 Film library is a service for searching movies, connected to the backend API. You can
 search movies and add them to watched and queue library in Web Storage.
 
-Use HTML, CSS, JavaScript, SAAS(SCSS) preprocessor and BEM methodology to build
-a website
+### Used Technologies:
+- HTML
+- CSS JavaScript
+- SAAS(SCSS)
+- Parcel
 
-The layout is made relative to three transition points: 480px, 768px and 1200px.
-
-For writing styles, used the Mobile First approach.
+### Acceptance Criteria
+- The layout is fixed in pixels.
+- Responsive and cross-browser layout:
+  - Mobile: 480px;
+  - Tablet: 768px;
+  - Desktop: 1200px.
+- Mobile First approach
+- BEM methodology
 
 ## ⚙️ Deployment 
 
@@ -28,4 +40,4 @@ To deploy this project, you need to perform the following steps:
 4. **Run the application**: Run the `npm run dev` or `yarn dev` command to run
    the project on the local server.
 5. **Deploy**: To deploy this project to a production server, use hosting
-   platforms such as Vercel, Netlify, or others.
+   platforms.
