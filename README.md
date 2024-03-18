@@ -1,6 +1,6 @@
-# Filmoteka
+# Filmoteka 🎥 
 
-## 🗂️ Project description 🗂️
+## 🗂️ Project description 
 
 This project was created with Parcel.
 
@@ -14,7 +14,7 @@ The layout is made relative to three transition points: 480px, 768px and 1200px.
 
 For writing styles, used the Mobile First approach.
 
-## 📂 Deployment
+## ⚙️ Deployment 
 
 To deploy this project, you need to perform the following steps:
 
