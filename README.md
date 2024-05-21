@@ -13,7 +13,8 @@ search movies and add them to watched and queue library in Web Storage.
 
 ### Used Technologies:
 - HTML
-- CSS JavaScript
+- CSS
+- JavaScript
 - SAAS(SCSS)
 - Parcel
 
