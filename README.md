@@ -23,7 +23,7 @@ search movies and add them to watched and queue library in Web Storage.
 - Responsive and cross-browser layout:
   - Mobile: 480px;
   - Tablet: 768px;
-  - Desktop: 1200px.
+  - Desktop: 1200px;
 - Mobile First approach
 - BEM methodology
 
