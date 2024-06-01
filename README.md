@@ -24,8 +24,8 @@ search movies and add them to watched and queue library in Web Storage.
   - Mobile: 480px;
   - Tablet: 768px;
   - Desktop: 1200px;
-- Mobile First approach
-- BEM methodology
+- Mobile First approach.
+- BEM methodology.
 
 ## ⚙️ Deployment 
 
